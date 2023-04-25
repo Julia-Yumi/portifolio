@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {/*root é um seletor global, onde se criam var para usar no projeto todo*/
+    --cor-primaria: #000000;
+    --cor-secundaria: #e8a0bf;
+    --cor-tercearia: #BA90C6;
+    --cor-hoover:#272727;
+
+    --fonte-primaria:'Krona One', sans-serif;
+    --fonte-secundaria:'Montserrat', sans-serif;
+}
+
+*{ /* o "*" serve para resetar tudo o que colocar dentro dos {}, isso pq o css já vem com um padrão,
+porém não iremos usar ele*/
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* height: 100vh; */
+    /*box-sizing: border-box serve para demarcar um limite, ou seja, assegura que nenhum elemento filho ultrapasse o tamanho do pai*/
+    box-sizing: border-box; 
+    background-color:var(--cor-primaria); 
+    color:var(--cor-secundaria);
+}
+
+.cabeçalho {
+    padding: 2% 0% 0% 15% ; /*espaçamento em relacão a margem, 1º é cima ,2º é direito, 3º inferior e 4º esquerdo*/
+}
+
+.cabeçalho__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.cabeçalho__menu__links {
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-tercearia);
+    text-decoration: none;
+}
+
+.apresentacao {
+    padding: 5% 15%; /*espaçamento em relacão a margem, 1º é vertical e o 2º é horizontal, 3º e 4º*/
+    display: flex; /*serve para colocar todos os itens do main em linha lado a lado*/
+    align-items: center; /*serve p centralizar os item na imagem que é o elemento de maior altura*/
+    justify-content: space-between;
+    gap: 82px;
+
+}
+.apresencao__conteudo {
+    width:50%;
+    display: flex;/*para add espaço entre os conteúdos*/
+    flex-direction: column;
+    gap: 40px;
+}
+
+.apresencao__conteudo__titulo{
+    font-size: 2.25rem; /*para converter pixel para rem pega o px/16*/
+    font-family: var(--fonte-primaria)
+}
+
+.titulo-destaque {
+    color: var(--cor-tercearia) ;
+}
+
+.apresencao__conteudo__texto{
+    font-size: 1.5rem;
+    font-family: var(--fonte-secundaria);
+}
+
+.apresencao__links{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.apresencao__links__subtítulo{
+    font-size: 1.5rem;
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+}
+
+.apresencao__links__apresentacao{
+    /* background-color: #22D4FD; */
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    
+    width: 50%;
+    text-align: center;
+    border-radius: 8px; /*para deixar a borda do botão arredondada*/
+    font-size: 1.5rem;
+    padding: 21.5px 0px;/*é a discia do que esta digitado as bordas, o 1º é verticale o 2º horizontal*/
+    text-decoration: none;
+    color: var(--cor-secundaria);
+
+    border: 2px solid var(--cor-tercearia); /*1º espessura da borda, 2º o tipo de borda, 3º cor*/
+    font-weight: 600;
+    font-family: var(--fonte-secundaria);
+    align-items: flex-start;
+}
+
+/*tudo que esta dentro do hover vai ser estilizado qnd o mouse passra por cima*/
+.apresencao__links__link:hover{
+    background-color: var(--cor-hoover);
+}
+
+.apresentacao__imagem{ 
+    width: 50%;
+
+    box-shadow: 10px 10px 0px 0px var(--cor-tercearia);
+    border-radius: 16px;
+    /* position: relative;
+    max-width: 30%;
+    height: auto;  */
+}
+
+.rodapé{
+    color: var(--cor-primaria);
+    background-color: var(--cor-tercearia);
+    padding: 24px;
+    text-align: center;
+    font-family: var(--fonte-secundaria);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+/*@media (media queries)serve para adotodar novas configurações qnd a condição que esta entre () for obedecida*/
+@media (max-width: 1200px){
+
+    .cabeçalho{
+        padding: 10%;
+    }
+
+    .cabeçalho__menu{
+        justify-content: center;
+    }
+
+    .apresentacao{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .apresencao__conteudo{
+        width: auto;/*para a width ocupar a largura que estiver disponível*/
+    }
+}
